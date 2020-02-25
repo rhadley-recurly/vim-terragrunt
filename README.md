@@ -4,7 +4,7 @@ This is very much a hack but it works. I don't know what I'm doing.
 
 Vim plugin to format Terragrunt Hashicorp Configuration Language (HCL) files.
 
-This plugin will run terragrunt hclfmt on the current directory on every :w.
+This plugin will run terragrunt hclfmt on the current directory on every :w on a .hcl file.
 
 ## Usage
 
