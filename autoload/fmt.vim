@@ -17,4 +17,4 @@ function! fmt#Format()
   call winrestview(l:curw)
 endfunction
 
-" vim:ts=4:sw=4:et
+" vim:ts=2:sw=2:et
