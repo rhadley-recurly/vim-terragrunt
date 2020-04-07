@@ -21,6 +21,6 @@ let g:hcl_fmt_autosave = 0
 
 With [Pathogen](https://github.com/tpope/vim-pathogen):
 
-```vim
-git clone https://github.com/rhadley-recurly/vim-terragrunt.git ~/.vim/bundle/vim-terragrunt`
+```bash
+git clone https://github.com/rhadley-recurly/vim-terragrunt.git ~/.vim/bundle/vim-terragrunt
 ```
