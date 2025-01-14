@@ -6,7 +6,7 @@ function! fmt#Format()
     return
   endif
   let l:curw = winsaveview()
-  let output = system('terragrunt hclfmt --terragrunt-hclfmt-file ' . expand('%:p'))
+  let output = system('terragrunt hclfmt --terragrunt-hclfmt-file "' . expand('%:p') . '"')
   if v:shell_error == 0
     try | silent undojoin | catch | endtry
     silent edit!
