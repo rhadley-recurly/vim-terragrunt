@@ -1,4 +1,4 @@
-" fmt.vim: Vim command to format terragrunt HCL files with terragrunt hclfmt.
+" fmt.vim: Vim command to format terragrunt HCL files with terragrunt hcl fmt.
 
 function! fmt#Format()
   write
@@ -6,7 +6,12 @@ function! fmt#Format()
     return
   endif
   let l:curw = winsaveview()
-  let output = system('terragrunt hclfmt --terragrunt-hclfmt-file "' . expand('%:p') . '"')
+  " Try new command first (Terragrunt >= v0.x with CLI redesign)
+  let output = system('terragrunt hcl fmt --file "' . expand('%:p') . '"')
+  " Fall back to old command if new command fails
+  if v:shell_error != 0
+    let output = system('terragrunt hclfmt --terragrunt-hclfmt-file "' . expand('%:p') . '"')
+  endif
   if v:shell_error == 0
     try | silent undojoin | catch | endtry
     silent edit!
